@@ -45,5 +45,5 @@ print((51+14) % 24)
 a = int(input("what time is it in hours: "))
 b = int(input("How many hours until the alarm: "))
 c = (a+b) % 24
-print(c)
+print("The time you will wake up is: ", c)
 
