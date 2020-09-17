@@ -57,21 +57,31 @@ else:
     if decider == "walk":
         km_travel = int(input("How many km do you want to travel? "))
         speed_walk = int(input("How fast do you walk in km/u? "))
-        hours_travelled = km_travel // speed_walk
-        minutes_travelled = 60 * ((km_travel % speed_walk)/speed_walk)
-        print("You will travel for ", hours_travelled, "hours and ", minutes_travelled, "minutes")
+        minutes_prepare = int(input("How long does it take to get prepared to leave in minutes? "))
+        hours_total = km_travel // speed_walk
+        total_minutes_travelled = hours_total * 60 + minutes_prepare
+        hours_travelled = total_minutes_travelled // 60
+        minutes_travelled = total_minutes_travelled % 60
+        print("You will arrive in ", hours_travelled, "hours and ", minutes_travelled, "minutes")
 
     if decider == "bike":
         km_travel = int(input("How many km do you want to travel? "))
         speed_bike = int(input("How fast do you bike in km/u? "))
-        hours_travelled = km_travel // speed_bike
-        minutes_travelled = 60 * ((km_travel % speed_bike)/speed_bike)
-        print("You will travel for ", hours_travelled, "hours and ", minutes_travelled, "minutes")
+        minutes_prepare = int(input("How long does it take to get prepared to leave in minutes? "))
+        hours_total = km_travel / speed_bike
+        total_minutes_travelled = hours_total * 60 + minutes_prepare
+        hours_travelled = total_minutes_travelled // 60
+        minutes_travelled = total_minutes_travelled % 60
+        print("You will arrive in ", hours_travelled, "hours and ", minutes_travelled, "minutes")
 
     if decider == "car":
         km_travel = int(input("How many km do you want to travel? "))
         speed_car = int(input("How fast do you ride in km/u? "))
-        hours_travelled = km_travel // speed_car
-        minutes_travelled = 60 * ((km_travel % speed_car)/speed_car)
-        print("You will travel for ", hours_travelled, "hours and ", minutes_travelled, "minutes")
+        minutes_prepare = int(input("How long does it take to get prepared to leave in minutes? "))
+        minutes_arrival = int(input("How long does it take to find parking? "))
+        hours_total = km_travel / speed_car
+        total_minutes_travelled = hours_total * 60 + minutes_prepare + minutes_arrival
+        hours_travelled = total_minutes_travelled // 60
+        minutes_travelled = total_minutes_travelled % 60
+        print("You will arrive in ", hours_travelled, "hours and ", minutes_travelled, "minutes")
 
