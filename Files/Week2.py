@@ -1,7 +1,6 @@
 def time_arrive(x, y, z):
     hours_total = x / y
     total_minutes_travelled = hours_total * 60 + z
-    print(total_minutes_travelled)
     hours_travelled = total_minutes_travelled // 60
     minutes_travelled = total_minutes_travelled % 60
     print("You will arrive in ", int(hours_travelled), "hours and ", int(minutes_travelled), "minutes")
@@ -68,16 +67,22 @@ if a == 2:
 
     if decider == "walk":
         speed = int(input("How fast do you walk in km/u? "))
+        if speed >= 30:
+            print("Look at you, Usain Bolt.")
 
     if decider == "bike":
         speed = int(input("How fast do you bike in km/u? "))
+        if speed >= 40:
+            print("Wow you must be so fast")
+        if speed <= 5:
+            print("You sure you don't want to walk?")
 
     if decider == "car":
         speed = int(input("How fast do you ride in km/u? "))
-
-    else:
-        print("Bye")
-        exit()
+        if speed >= 160:
+            print("Don't go breaking no traffic regulations now. ")
+        if speed <= 20:
+            print("Save the environment, take a bike.")
 
     minutes_prepare = int(input("How long does it take to get prepared to leave in minutes? "))
     minutes_arrival = int(input("How long does it take to find parking? "))
